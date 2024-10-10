@@ -11,7 +11,7 @@ from litestar.status_codes import HTTP_404_NOT_FOUND, HTTP_500_INTERNAL_SERVER_E
 from sqlalchemy import select, literal
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
-DB_URL = "postgresql+psycopg://myuser:mypass@postgres:5432/mydb"
+DB_URL = "postgresql+psycopg://myuser@postgres:5432/mydb"
 
 def generic_exception_handler(_: Request, exc: Exception) -> Response:
     """Default handler for exceptions subclassed from HTTPException."""
