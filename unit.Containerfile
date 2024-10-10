@@ -25,7 +25,7 @@ FROM base AS final
 USER root
 WORKDIR /root/
 COPY --from=builder --chown=myuser:myuser /home/myuser/webserver-venv /home/myuser/webserver-venv
-COPY --chown=myuser:myuser ./unit.d/.pgpass /home/myuser
+COPY --chmod=0600 --chown=myuser:myuser ./unit.d/.pgpass /home/myuser
 COPY ./unit.d/unit.json /etc/
 COPY --chmod=744 ./unit.d/entrypoint.sh ./unit.d/reload.sh ./
 ENTRYPOINT ["./entrypoint.sh"]
