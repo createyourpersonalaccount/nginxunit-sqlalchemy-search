@@ -22,9 +22,9 @@ dependencies = [
     "psycopg",
 ]
 
-# [project.urls]
-# Homepage = "https://github.com/..."
-# Issues = "https://github.com/..."
+[project.urls]
+Homepage = "https://github.com/createyourpersonalaccount/nginxunit-sqlalchemy-search"
+Issues = "https://github.com/createyourpersonalaccount/nginxunit-sqlalchemy-search/issues"
 
 [tool.setuptools]
 include-package-data = true
