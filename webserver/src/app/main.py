@@ -38,7 +38,7 @@ def server_error_404(router: Request, exc: Exception) -> Response:
 async def search_documents(Session, s):
     stmt = select(literal(1))
     async with Session() as session:
-          result = await session.scalar(stmt)
+        result = await session.scalar(stmt)
     return result
 
 
