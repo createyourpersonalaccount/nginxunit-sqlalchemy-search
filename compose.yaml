@@ -1,0 +1,22 @@
+name: nginxunit-sqlalchemy-search
+
+services:
+  unit:
+    build:
+      dockerfile: ./unit.Containerfile
+    hostname: unit
+    container_name: unit
+    init: true
+    ports:
+      - "48572:80"
+    volumes:
+      - ./webserver:/home/myuser/webserver:ro
+  postgres:
+    image: docker.io/postgres:bookworm
+    container_name: postgres
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypass
+      POSTGRES_DB: mydb
+    ports:
+      - "5432"
